@@ -1,11 +1,12 @@
-# Demo 1 · Setup & Kenali Code Base (±40 menit)
+# Demo 1 · Setup & Kenali Code Base
 
-> Folder ini project lengkap. Isinya starter: belum ada Demo yang diisi.
-> Buka folder ini langsung di VS Code, lalu lakukan persiapan di [README utama](../README.md) (mis. salin `.env`, install, atau `git init`) **di folder ini**. Semua path relatif terhadap folder ini.
+[Persiapan](../README.md) · [Troubleshooting](../TROUBLESHOOTING.md)
 
-**Peraga (±20 menit):** cara kerja coding agent, permission mode, `CLAUDE.md`, git sebagai jaring pengaman, lalu membuka folder lab: dialog trust, status bar, dan satu permintaan izin nyata. **Ikuti (±20 menit):** langkah 1.1–1.6 di bawah.
+> Buka folder ini langsung di VS Code dan lakukan persiapan project di sini (`.env`, install, atau `git init`).
 
-## 1.1 Siapkan repo (±3 menit)
+Kerjakan 1.1–1.6: siapkan repo, jalankan Claude Code, buat `CLAUDE.md`, lalu commit.
+
+## 1.1 Siapkan repo
 
 Buka folder `demo-1` di VS Code, lalu buka terminal (**Terminal > New Terminal**). Jadikan titik awal ini commit pertama, supaya setiap perubahan dari agent terlihat di `git diff`.
 
@@ -43,7 +44,7 @@ Yang harus terlihat di akhir `npm test`:
 
 `.env` sengaja dibuat untuk latihan deny rule. Isinya tetap `ISI_...` dan tidak di-commit (`.gitignore`).
 
-## 1.2 Jalankan Claude Code (±2 menit)
+## 1.2 Jalankan Claude Code
 
 ```bash
 claude
@@ -59,7 +60,7 @@ Yang harus terlihat di bawah kotak prompt:
 
 `manual mode` berasal dari `.claude/settings.json` (`"defaultMode": "default"`). Tanpa file itu, Claude Code versi sekarang mulai di `auto mode`.
 
-## 1.3 Minta penjelasan repo, read-only (±6 menit)
+## 1.3 Minta penjelasan repo, read-only
 
 Buka `prompts/a1-kenali-repo.txt` di VS Code, salin semua isinya, tempel ke Claude Code, lalu Enter. Prompt panjang tampil sebagai `[Pasted text #1 +14 lines]`: itu normal.
 
@@ -67,7 +68,7 @@ Claude Code akan meminta izin menjalankan perintah baca (`cat`, `npm test`). Nav
 
 Yang harus terlihat: tabel file, perintah `npm test`, dan maksimal 5 temuan dengan `file:baris`. Reviewer mencocokkan minimal 2 temuan dengan membuka file dan baris yang disebut.
 
-## 1.4 Buat `CLAUDE.md` dengan `/init` (±4 menit)
+## 1.4 Buat `CLAUDE.md` dengan `/init`
 
 Ketik `/init`, Enter. Claude Code membaca repo, lalu meminta izin:
 
@@ -77,11 +78,11 @@ Do you want to create CLAUDE.md?
 
 Navigator membaca isi yang diusulkan sebelum memilih **1. Yes**.
 
-## 1.5 Tambahkan aturan tim (±3 menit)
+## 1.5 Tambahkan aturan tim
 
 Tempel isi `prompts/a2-rapikan-claude-md.txt`. Claude Code menampilkan diff dan bertanya `Do you want to make this edit to CLAUDE.md?`. Cek bahwa baris bertanda `+` hanya bagian "Aturan Tim", lalu pilih **1. Yes**.
 
-## 1.6 Commit oleh tim (±2 menit)
+## 1.6 Commit oleh tim
 
 Commit dilakukan manusia, bukan agent. Di kotak prompt Claude Code, ketik `!` untuk masuk mode bash (perintah dijalankan langsung oleh tim, bukan oleh agent), lalu:
 

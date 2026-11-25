@@ -1,11 +1,12 @@
-# Demo 2 · Prompt untuk Data Terstruktur & Tidak Terstruktur (±45 menit)
+# Demo 2 · Prompt untuk Data Terstruktur & Tidak Terstruktur
 
-> Folder ini project lengkap. Hasil Demo 1 **sudah terisi** (catch-up). Kalau pekerjaanmu sendiri sudah jalan, boleh pakai punyamu.
-> Buka folder ini langsung di VS Code, lalu lakukan persiapan di [README utama](../README.md) (mis. salin `.env`, install, atau `git init`) **di folder ini**. Semua path relatif terhadap folder ini.
+[Persiapan](../README.md) · [Troubleshooting](../TROUBLESHOOTING.md)
 
-**Peraga (±17 menit):** prompt umum dibanding prompt berstruktur, plan mode, prompt dengan input terstruktur (schema, kode, aturan saldo) dan input tidak terstruktur (catatan bebas), serta cara mengecek hasilnya di luar AI. **Ikuti (±28 menit):** langkah 2.1–2.4.
+> Hasil Demo 1 sudah terisi di folder ini. Buka folder ini langsung di VS Code dan lakukan persiapan project di sini (`.env`, install, atau `git init`).
 
-## 2.1 Seed SQL dari schema (±10 menit)
+Kerjakan 2.1–2.4: prompt untuk input terstruktur dan tidak terstruktur, lalu cek hasilnya di luar AI.
+
+## 2.1 Seed SQL dari schema
 
 1. Tempel isi `prompts/b1-seed-terstruktur.txt`. Navigator membaca isi file yang akan dibuat (`Do you want to create seed-tambahan.sql?`), lalu **1. Yes**. Kalau agent meminta izin menjalankan skrip cek buatannya sendiri, navigator membaca dulu perintahnya.
 2. Reviewer membuka `db/seed-tambahan.sql` di VS Code dan **Attach Connection** ke `ALP_DEV @ FREEPDB1`. Belum dijalankan.
@@ -30,7 +31,7 @@ Semua baris rekonsiliasi `COCOK`, dan `TXN_REKENING_TIDAK_AKTIF` = `0`. Setelah 
 
 Kalau ada `ORA-` atau `SELISIH`: jalankan `ROLLBACK;`, salin pesan error (tanpa data lain) ke Claude Code dengan prompt "Perbaiki db/seed-tambahan.sql. Error dari Oracle: [PESAN ERROR]. Jangan ubah file lain.", lalu ulangi langkah 2–4. Catat iterasinya di log approval.
 
-## 2.2 Catatan setoran bebas ke JSON (±12 menit)
+## 2.2 Catatan setoran bebas ke JSON
 
 1. Buka `data/catatan-setoran.txt` dan baca sendiri dulu. Setiap anggota menandai baris yang menurutnya ragu (tanggal, rekening, atau nominal tidak jelas).
 2. Tempel isi `prompts/b2-ekstrak-catatan.txt`. Setujui pembuatan `data/setoran.json` dan perintah `node scripts/cek-setoran.js`.
@@ -52,13 +53,13 @@ OK  bentuk data sesuai aturan
 
 4. Bandingkan daftar `perlu_cek` dengan tanda tim di langkah 1. Untuk setiap baris yang beda, putuskan siapa yang benar dan tulis alasannya di log approval (bagian Temuan). Baris yang tidak ditandai agent tapi menurut tim ragu: minta agent mengubah record itu menjadi `perlu_cek: true` dengan alasan dari tim.
 
-## 2.3 Commit (±2 menit)
+## 2.3 Commit
 
 ```bash
 git add db/seed-tambahan.sql data/setoran.json && git commit -m "feat: seed tambahan dan hasil ekstraksi setoran"
 ```
 
-## 2.4 Cek silang ke database (±4 menit)
+## 2.4 Cek silang ke database
 
 Catatan setoran menyebut nama dan nomor rekening. Untuk setiap record yang `perlu_cek: false`, cocokkan pemilik rekening di Oracle:
 

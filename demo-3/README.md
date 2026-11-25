@@ -1,11 +1,12 @@
-# Demo 3 · Perbaikan Keamanan (±50 menit)
+# Demo 3 · Perbaikan Keamanan
 
-> Folder ini project lengkap. Hasil Demo 1 sampai Demo 2 **sudah terisi** (catch-up). Kalau pekerjaanmu sendiri sudah jalan, boleh pakai punyamu.
-> Buka folder ini langsung di VS Code, lalu lakukan persiapan di [README utama](../README.md) (mis. salin `.env`, install, atau `git init`) **di folder ini**. Semua path relatif terhadap folder ini.
+[Persiapan](../README.md) · [Troubleshooting](../TROUBLESHOOTING.md)
 
-**Peraga (±25 menit):** hallucination, prompt injection, SQL disambung string di Oracle, data yang tidak boleh masuk prompt, deny rule, lisensi kode dari AI, cara review diff, dan `/rewind`. **Ikuti (±25 menit):** langkah 3.1–3.2.
+> Hasil Demo 1 sampai Demo 2 sudah terisi di folder ini. Buka folder ini langsung di VS Code dan lakukan persiapan project di sini (`.env`, install, atau `git init`).
 
-## 3.1 Bind variable di `report-query.js`, dengan plan mode (±15 menit)
+Kerjakan 3.1–3.2: perbaiki query dengan plan mode, lalu review keamanan.
+
+## 3.1 Bind variable di `report-query.js`, dengan plan mode
 
 1. Lihat dulu masalahnya. Di terminal kedua (tombol **+** di panel Terminal):
 
@@ -34,7 +35,7 @@ Yang harus terlihat: `fail 0`, jumlah test bertambah dari 10, SQL berisi `:accou
 git add src/report-query.js test/report-query.test.js && git commit -m "fix(report): pakai bind variable untuk input laporan"
 ```
 
-## 3.2 Review keamanan (±10 menit)
+## 3.2 Review keamanan
 
 1. Reviewer mengisi bagian **Lingkup** dan **Aman** di `review/checklist-review.md` dari `git show HEAD` (commit 3.1).
 2. Minta second opinion dari agent dengan prompt read-only `prompts/c3-review-keamanan.txt`. Saat ini perubahan yang ada hanya commit 3.1, jadi yang diulas hanya `report-query.js`.
