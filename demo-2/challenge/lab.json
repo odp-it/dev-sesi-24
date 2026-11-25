@@ -1,0 +1,20 @@
+{
+  "tim": "ISI_NAMA_TIM",
+  "fitur": "ISI_NAMA_FITUR",
+  "fungsi": "ISI_NAMA_FUNGSI",
+  "modul": "src/alp/ISI_NAMA_FILE.js",
+  "test": "test/alp-ISI_NAMA_FILE.test.js",
+  "prompt": "prompts/lab-alp.txt",
+  "kasus": [
+    {
+      "nama": "ISI_KASUS_VALID",
+      "args": [{ "ISI_FIELD": "ISI_NILAI" }],
+      "hasil": { "valid": true, "errors": [] }
+    },
+    {
+      "nama": "ISI_KASUS_DITOLAK",
+      "args": [{ "ISI_FIELD": "ISI_NILAI" }],
+      "hasil": { "valid": false, "errors": [{ "field": "ISI_FIELD", "code": "ISI_KODE_ERROR" }] }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+# Rahasia
+.env
+.env.*
+!.env.example
+
+# Claude Code: preferensi pribadi
+.claude/settings.local.json
+CLAUDE.local.md
+
+# Node, OS, editor
+node_modules/
+.DS_Store
+*.log

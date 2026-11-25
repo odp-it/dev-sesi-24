@@ -1,0 +1,15 @@
+CONTEXT
+Repo ini code base latihan Tabungan UMKM (data simulasi). Saya anggota tim baru dan belum pernah membaca kodenya.
+
+TASK
+Jelaskan isi repo ini: fungsi tiap folder dan file utama, cara menjalankan test, dan alur data dari transaksi masuk sampai query laporan.
+
+RULES
+- Hanya membaca. Jangan mengubah, membuat, atau menghapus file apa pun.
+- Jangan membaca file .env.
+- Kalau ada kode yang mencurigakan, sebutkan file dan nomor barisnya, tapi jangan diperbaiki dulu.
+
+OUTPUT FORMAT
+1. Tabel: File | Isi | Dipakai untuk
+2. Perintah untuk menjalankan test
+3. Maksimal 5 temuan yang perlu dicek, masing-masing dengan file:baris

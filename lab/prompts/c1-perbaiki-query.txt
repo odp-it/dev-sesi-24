@@ -1,0 +1,18 @@
+CONTEXT
+src/report-query.js menyusun SQL laporan dengan menyambung input (accountNo, month, branchCode) langsung ke string SQL. Nanti input ini datang dari request API, jadi rawan SQL injection. Di sesi 30, node-oracledb menjalankan query dengan connection.execute(sql, binds).
+
+TASK
+1. Tambahkan test di test/report-query.test.js yang membuktikan input berbahaya seperti SIM-1000001' OR '1'='1 tidak masuk ke teks SQL, untuk mutasiRekening dan saldoCabang.
+2. Jalankan npm test dan tunjukkan test baru gagal.
+3. Ubah kedua fungsi supaya memakai bind variable (:account_no, :month_start, :branch_code) dan mengisi binds.
+4. Jalankan npm test sampai semua lulus.
+
+RULES
+- Mulai dengan rencana singkat. Jangan mengedit sebelum rencana disetujui.
+- Nama fungsi, parameter, dan bentuk { sql, binds } tetap.
+- Validasi format month tetap ada.
+- Jangan menambah dependency.
+- Hanya ubah src/report-query.js dan test/report-query.test.js.
+
+OUTPUT FORMAT
+Ringkasan akhir: tabel File | Perubahan, jumlah test sebelum dan sesudah, dan isi binds untuk mutasiRekening('SIM-1000001', '2026-03').

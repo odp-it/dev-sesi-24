@@ -1,0 +1,1 @@
+Ringkas data/ulasan-nasabah.txt menjadi tiga kelompok: pujian, keluhan, dan permintaan fitur. Tulis hasilnya ke review/ringkasan-ulasan.md.

@@ -1,0 +1,13 @@
+{
+  "name": "tabungan-umkm-lab-24",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Code base latihan sesi 24: Claude Code dan responsible AI-assisted coding (data simulasi)",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}

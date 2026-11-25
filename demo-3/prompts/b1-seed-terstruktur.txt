@@ -1,0 +1,23 @@
+CONTEXT
+Database Oracle schema ALP_DEV berisi tabel BRANCHES, CUSTOMERS, ACCOUNTS, dan TRANSACTIONS. Definisi tabel dan semua constraint ada di db/schema.sql. Cabang yang sudah ada: KCP-SIM-01, KCP-SIM-02, KCP-SIM-03. Semua data adalah data simulasi.
+
+TASK
+Buat file db/seed-tambahan.sql berisi INSERT data simulasi tambahan:
+- 5 nasabah (minimal 2 segment UMKM), tersebar di ketiga cabang
+- 6 rekening milik nasabah baru itu (minimal 1 GIRO, tepat 1 berstatus DIBLOKIR)
+- 20 transaksi bulan Maret 2026 untuk rekening baru
+
+RULES
+- Ikuti nama kolom, tipe data, dan semua constraint di db/schema.sql.
+- Jangan mengisi kolom ID (identity). Ambil foreign key lewat subquery dari branch_code, cif_no, atau account_no.
+- Pakai hanya kode ini: CIF-SIM-2001 s.d. CIF-SIM-2005, SIM-2000001 s.d. SIM-2000006, REF-SIM-200001 s.d. REF-SIM-200020.
+- Nama berakhiran "Contoh". Email pakai pola <namadepan>.<4 digit CIF>@example.com (contoh: tono.2001@example.com). Telepon 0800-0000-2xxx.
+- Transaksi hanya untuk rekening AKTIF. TRANSFER_MASUK dan TRANSFER_KELUAR memakai category TRANSFER.
+- Saldo awal rekening 0, jadi balance = total SETOR + TRANSFER_MASUK - TARIK - TRANSFER_KELUAR rekening itu. Saldo tidak boleh minus di titik mana pun.
+- Waktu pakai literal TIMESTAMP 'YYYY-MM-DD HH24:MI:SS'.
+- Jangan menulis COMMIT. Jangan mengubah file lain.
+
+OUTPUT FORMAT
+- Satu file SQL. Baris pertama: -- 5 nasabah, 6 rekening, 20 transaksi
+- Urutan INSERT: CUSTOMERS, ACCOUNTS, TRANSACTIONS.
+- Setelah file dibuat, tampilkan tabel: account_no | status | jumlah transaksi | balance

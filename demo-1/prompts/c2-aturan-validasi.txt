@@ -1,0 +1,19 @@
+CONTEXT
+src/validator.js memvalidasi transaksi sebelum disimpan. Dua aturan belum ada: rekening yang tidak aktif masih bisa bertransaksi, dan nominal 0 atau minus lolos (penarikan -50000 malah dianggap valid).
+
+TASK
+1. Tulis test dulu di test/validator.test.js untuk aturan baru:
+   - account.status DIBLOKIR: error { field: 'account', code: 'ACCOUNT_BLOCKED' }
+   - account.status DITUTUP: error { field: 'account', code: 'ACCOUNT_CLOSED' }
+   - amount 0, minus, bukan number, atau lebih dari 2 angka desimal: error { field: 'amount', code: 'VALIDATION_ERROR' }
+2. Jalankan npm test dan tunjukkan test baru gagal.
+3. Implementasikan aturan di src/validator.js sampai semua test lulus.
+
+RULES
+- Test lama tidak boleh diubah atau dihapus.
+- Kalau amount tidak valid, jangan cek saldo (cukup VALIDATION_ERROR).
+- Hanya ubah src/validator.js dan test/validator.test.js.
+- Jangan commit. Commit dilakukan tim setelah review.
+
+OUTPUT FORMAT
+Tabel Aturan | Test | Status, lalu baris ringkasan akhir npm test (tests, pass, fail).

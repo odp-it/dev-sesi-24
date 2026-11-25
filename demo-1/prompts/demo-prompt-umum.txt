@@ -1,0 +1,1 @@
+Buatkan data contoh untuk tabel nasabah, rekening, dan transaksi di database Oracle kita. Simpan di db/seed-umum.sql.

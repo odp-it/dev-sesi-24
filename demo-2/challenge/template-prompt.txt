@@ -1,0 +1,17 @@
+CONTEXT
+Repo ini code base latihan sesi 24. Tim ISI_NAMA_TIM menambah satu aturan bisnis aplikasi ALP: ISI_NAMA_FITUR (ISI satu kalimat: siapa pengguna dan apa yang harus ditolak). Spesifikasi dan kasus penerimaan ditulis tim di challenge/lab.json. Semua data adalah data simulasi. Pola kode acuan: src/validator.js dan test/validator.test.js.
+
+TASK
+1. Tulis test dulu di ISI_PATH_TEST dari kasus penerimaan di challenge/lab.json, minimal 5 test. Fungsi yang diuji: ISI_NAMA_FUNGSI.
+2. Jalankan npm test, tunjukkan test baru gagal, lalu berhenti. Tim akan commit test itu sendiri.
+3. Setelah tim menulis "lanjut", implementasikan ISI_NAMA_FUNGSI di ISI_PATH_MODUL sampai npm test lulus. Fungsi mengembalikan { valid, errors: [{ field, code }] }.
+
+RULES
+- Hanya buat atau ubah ISI_PATH_TEST dan ISI_PATH_MODUL.
+- Jangan mengubah challenge/lab.json, test lama, atau src/validator.js.
+- Jangan membaca file .env. Jangan memakai data asli. Jangan menambah dependency.
+- Jangan commit. Commit dilakukan tim setelah review.
+- ISI_ATURAN_BISNIS: tulis batas dan kode error yang berlaku.
+
+OUTPUT FORMAT
+Tabel Aturan | Test | Status, lalu baris ringkasan akhir npm test (tests, pass, fail). ISI_HAL_LAIN_YANG_INGIN_DICEK

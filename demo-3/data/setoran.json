@@ -1,0 +1,14 @@
+[
+  {"baris": 2, "tanggal": "2026-03-02", "nama": "Rina Contoh", "account_no": "SIM-1000001", "amount": 1500000, "kategori": "PENJUALAN", "perlu_cek": false, "alasan_cek": null},
+  {"baris": 3, "tanggal": "2026-03-03", "nama": "Budi Contoh", "account_no": "SIM-1000003", "amount": 2500000, "kategori": "PENJUALAN", "perlu_cek": false, "alasan_cek": null},
+  {"baris": 4, "tanggal": "2026-03-04", "nama": "Sari Contoh", "account_no": "SIM-1000004", "amount": 750000, "kategori": "LAINNYA", "perlu_cek": false, "alasan_cek": null},
+  {"baris": 5, "tanggal": "2026-03-05", "nama": "Agus Contoh", "account_no": "SIM-1000006", "amount": null, "kategori": "LAINNYA", "perlu_cek": true, "alasan_cek": "nominal 1.500 tidak jelas (Rp1.500 atau Rp1.500.000)"},
+  {"baris": 6, "tanggal": "2026-03-06", "nama": "Dewi Contoh", "account_no": null, "amount": 3000000, "kategori": "PENJUALAN", "perlu_cek": true, "alasan_cek": "nomor rekening tidak ada"},
+  {"baris": 7, "tanggal": "2026-03-07", "nama": "Joko Contoh", "account_no": null, "amount": 1200000, "kategori": "LAINNYA", "perlu_cek": true, "alasan_cek": "nomor rekening SIM-100006 bukan SIM- + 7 digit"},
+  {"baris": 8, "tanggal": "2026-03-09", "nama": "Maya Contoh", "account_no": "SIM-1000013", "amount": 4250000, "kategori": "PENJUALAN", "perlu_cek": true, "alasan_cek": "cek silang Oracle: SIM-1000013 milik nasabah lain (Lina Contoh); rekening Maya Contoh adalah SIM-1000010"},
+  {"baris": 9, "tanggal": "2026-03-10", "nama": "Hendra Contoh", "account_no": "SIM-1000011", "amount": 500000, "kategori": "LAINNYA", "perlu_cek": true, "alasan_cek": "cek silang Oracle: SIM-1000011 berstatus DIBLOKIR"},
+  {"baris": 10, "tanggal": "2026-03-11", "nama": "Lina Contoh", "account_no": null, "amount": 2000000, "kategori": "LAINNYA", "perlu_cek": true, "alasan_cek": "dua nomor rekening (SIM-1000009 / SIM-1000015)"},
+  {"baris": 11, "tanggal": "2026-03-12", "nama": "Sari Contoh", "account_no": "SIM-1000005", "amount": 100000, "kategori": "LAINNYA", "perlu_cek": false, "alasan_cek": null},
+  {"baris": 12, "tanggal": "2026-03-13", "nama": "Wati Contoh", "account_no": "SIM-1000015", "amount": 2000000, "kategori": "PENJUALAN", "perlu_cek": false, "alasan_cek": null},
+  {"baris": 13, "tanggal": null, "nama": "Fajar Contoh", "account_no": "SIM-1000014", "amount": 1000000, "kategori": "PENJUALAN", "perlu_cek": true, "alasan_cek": "tanggal tidak ada"}
+]

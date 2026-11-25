@@ -1,0 +1,14 @@
+CONTEXT
+Tim sudah membuat perubahan di repo ini dan belum di-commit. Kami butuh second opinion sebelum reviewer manusia memutuskan.
+
+TASK
+Review perubahan yang belum di-commit (git diff) dan perubahan di commit terakhir (git show HEAD) dari sisi keamanan dan kebenaran.
+
+RULES
+- Hanya membaca. Jangan mengubah file dan jangan commit.
+- Fokus: SQL injection, input yang tidak divalidasi, secret atau data asli di kode/test, perubahan di luar file yang diminta, test lama yang diubah.
+- Setiap temuan wajib menyebut file:baris dan bukti dari diff. Kalau tidak yakin, tulis "perlu dicek manusia", jangan menebak.
+
+OUTPUT FORMAT
+Tabel: No | File:baris | Temuan | Tingkat (tinggi/sedang/rendah) | Saran
+Lalu satu kalimat kesimpulan: aman di-commit atau belum.
