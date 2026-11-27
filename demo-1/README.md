@@ -6,7 +6,7 @@
 
 Kerjakan 1.1-1.6: siapkan repo, jalankan Claude Code, buat `CLAUDE.md`, lalu commit.
 
-**Demo instruktur (±20 menit):** cara kerja coding agent, permission mode, `CLAUDE.md`, git sebagai jaring pengaman, lalu membuka folder lab: dialog trust, status bar, dan satu permission prompt nyata. **Ikuti (±20 menit):** langkah 1.1-1.6 di bawah.
+**Demo instruktur (±20 menit):** cara kerja coding agent, permission mode, `CLAUDE.md`, alur git saat bekerja dengan agent, lalu membuka folder lab: dialog trust, status bar, dan satu permission prompt nyata. **Ikuti (±20 menit):** langkah 1.1-1.6 di bawah.
 
 ## 1.1 Siapkan repo
 
