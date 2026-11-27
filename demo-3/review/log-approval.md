@@ -1,6 +1,6 @@
 # Log Approval Checkpoint
 
-Diisi security checker setiap Claude Code meminta izin (edit file, jalankan perintah, baca file di luar folder). Satu baris per permintaan izin. Kolom Bagian diisi nomor langkah Demo (mis. `2.1`) atau `Lab`.
+Diisi security checker setiap Claude Code meminta izin (edit file, jalankan perintah, baca file di luar folder). Satu baris per permission prompt. Kolom Bagian diisi nomor langkah Demo (mis. `2.1`) atau `Lab`.
 
 Tim: ISI_NAMA_TIM
 

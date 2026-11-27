@@ -6,6 +6,8 @@
 
 Kerjakan 3.1-3.2: perbaiki query dengan plan mode, lalu review keamanan.
 
+**Demo instruktur (±25 menit):** hallucination, prompt injection, SQL disambung string di Oracle, data yang tidak boleh masuk prompt, deny rule, lisensi kode dari AI, cara review diff, dan `/rewind`. **Ikuti (±25 menit):** langkah 3.1-3.2 (5 menit sebelum coffee break, 20 menit sesudahnya).
+
 ## 3.1 Bind variable di `report-query.js`, dengan plan mode
 
 1. Lihat dulu masalahnya. Di terminal kedua (tombol **+** di panel Terminal):
@@ -17,8 +19,8 @@ node scripts/cetak-query.js mutasi "SIM-1000001' OR '1'='1" 2026-03
 Input masuk utuh ke teks SQL (`WHERE a.account_no = 'SIM-1000001' OR '1'='1'`) dan `binds` kosong.
 
 2. Di Claude Code, tekan **Shift+Tab** dua kali sampai status bar menjadi `⏸ plan mode on`.
-3. Tempel isi `prompts/c1-perbaiki-query.txt`. Claude Code membaca kode lalu menampilkan rencana dengan pertanyaan `Would you like to proceed?`.
-4. Navigator dan reviewer membaca rencana: file yang diubah hanya dua, test ditulis dulu, nama fungsi tetap. Kalau setuju, pilih **2. Yes, manually approve edits**. Pilihan yang tersorot pertama kali adalah **1. Yes, and use auto mode**, jadi tekan panah bawah dulu. Kalau tidak setuju, pilih **3. Tell Claude what to change** dan tulis koreksinya.
+3. Tempel isi `prompts/c1-perbaiki-query.txt`. Claude Code membaca kode lalu menampilkan plan dengan pertanyaan `Would you like to proceed?`.
+4. Navigator dan reviewer membaca plan: file yang diubah hanya dua, test ditulis dulu, nama fungsi tetap. Kalau setuju, pilih **2. Yes, manually approve edits**. Pilihan yang tersorot pertama kali adalah **1. Yes, and use auto mode**, jadi tekan panah bawah dulu. Kalau tidak setuju, pilih **3. Tell Claude what to change** dan tulis koreksinya.
 5. Setujui edit satu per satu setelah membaca diff-nya.
 6. Reviewer menjalankan sendiri:
 

@@ -6,9 +6,11 @@
 
 Di kelas, Demo 4 diperagakan instruktur (±10 menit) karena waktu kelas dipakai untuk presentasi project. Kerjakan 4.1-4.2 secara mandiri setelah kelas: tambah aturan validasi dengan test dulu, review diff, lalu commit. Commit 4.1 dipakai di latihan mandiri folder `lab`.
 
+**Demo instruktur di kelas (±10 menit):** instruktur memperagakan alur test dulu, plan, edit dengan izin, `npm test`, review diff, commit oleh tim. **Mandiri di luar kelas:** peserta mengerjakan langkah 4.1-4.2 di bawah, dan hasilnya (commit 4.1) dibutuhkan untuk latihan mandiri di bagian Lab.
+
 ## 4.1 Aturan validasi baru, test dulu
 
-Mode kembali `manual mode on` setelah rencana 3.1 dijalankan. Tempel isi `prompts/c2-aturan-validasi.txt`. Setujui edit test dulu, lalu edit `src/validator.js`.
+Mode kembali `manual mode on` setelah plan 3.1 dijalankan. Tempel isi `prompts/c2-aturan-validasi.txt`. Setujui edit test dulu, lalu edit `src/validator.js`.
 
 Yang harus terlihat di jawaban agent: test baru gagal dulu, lalu semua lulus. Reviewer menjalankan `npm test` sendiri dan mengecek:
 

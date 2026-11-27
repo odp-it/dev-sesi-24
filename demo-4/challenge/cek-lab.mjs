@@ -2,7 +2,7 @@
 // Pakai, dari folder lab (sama di macOS, Linux, dan Windows PowerShell):
 //   node challenge/cek-lab.mjs
 // Yang dibaca: challenge/lab.json, prompt tim, modul, test, review/log-approval.md, riwayat Git.
-// File tim tidak diubah. Uji "test menangkap kesalahan" berjalan di salinan sementara yang langsung dihapus.
+// File tim tidak diubah. Cek "test menangkap kesalahan" berjalan di salinan sementara yang langsung dihapus.
 import { spawnSync } from 'node:child_process';
 import { cpSync, existsSync, mkdtempSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -124,7 +124,7 @@ let hasilTest = null;
     try {
       for (const f of ['package.json', 'src', 'test']) cpSync(path.join(root, f), path.join(salinan, f), { recursive: true });
       if (!jalankanTest(salinan, fileTest).lulus) {
-        catatan.push('test tim bergantung pada file di luar src/ dan test/, uji kesalahan tidak bisa dijalankan');
+        catatan.push('test tim bergantung pada file di luar src/ dan test/, test kesalahan tidak bisa dijalankan');
       } else {
         const target = path.join(salinan, modul);
         const asli = target.replace(/\.js$/, '.asli.js');

@@ -6,9 +6,11 @@
 
 Kerjakan 2.1-2.4: prompt untuk input terstruktur dan tidak terstruktur, lalu cek hasilnya di luar AI.
 
+**Demo instruktur (±17 menit):** prompt umum dibanding prompt berstruktur, plan mode, prompt dengan input terstruktur (schema, kode, aturan saldo) dan input tidak terstruktur (catatan bebas), serta cara mengecek hasilnya di luar AI. **Ikuti (±28 menit):** langkah 2.1-2.4.
+
 ## 2.1 Seed SQL dari schema
 
-1. Tempel isi `prompts/b1-seed-terstruktur.txt`. Navigator membaca isi file yang akan dibuat (`Do you want to create seed-tambahan.sql?`), lalu **1. Yes**. Kalau agent meminta izin menjalankan skrip cek buatannya sendiri, navigator membaca dulu perintahnya.
+1. Tempel isi `prompts/b1-seed-terstruktur.txt`. Navigator membaca isi file yang akan dibuat (`Do you want to create seed-tambahan.sql?`), lalu **1. Yes**. Kalau agent meminta izin menjalankan script cek buatannya sendiri, navigator membaca dulu perintahnya.
 2. Reviewer membuka `db/seed-tambahan.sql` di VS Code dan **Attach Connection** ke `ALP_DEV @ FREEPDB1`. Belum dijalankan.
 3. Salin seluruh isi `db/cek-seed-tambahan.sql` ke bawah isi seed di worksheet yang sama, lalu **Run Script (F5)** sekali. Seed dan cek harus satu worksheet: setiap tab adalah session sendiri dan Auto Commit mati, jadi tab lain belum melihat data seed (hasilnya `0 / 0 / 0`).
 4. Batalkan data latihan supaya `ALP_DEV` tetap bersih untuk sesi berikutnya. Di worksheet yang sama jalankan:

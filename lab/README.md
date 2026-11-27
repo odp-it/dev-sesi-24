@@ -45,7 +45,7 @@ git add test/alp-<nama>.test.js challenge/lab.json prompts/lab-alp.txt
 git commit -m "test(alp): kasus penerimaan <nama fitur>"
 ```
 
-File modul tidak boleh ikut commit ini. Tanpa agent: salin `challenge/template-uji.js` ke path `test` di `lab.json`.
+File modul tidak boleh ikut commit ini. Tanpa agent: salin `challenge/template-test.js` ke path `test` di `lab.json`.
 
 ## L.4 Implementasi, review diff, commit
 
@@ -66,7 +66,7 @@ Security checker mengisi minimal 3 baris berbagian `Lab` di `review/log-approval
 node challenge/cek-lab.mjs
 ```
 
-Perintahnya sama di macOS, Linux, dan Windows PowerShell. Skrip membaca file dan riwayat Git tim tanpa mengubahnya; uji "test menangkap fungsi salah" berjalan di salinan sementara. Perbaiki bagian yang disebut di "Yang perlu diperbaiki", lalu jalankan lagi.
+Perintahnya sama di macOS, Linux, dan Windows PowerShell. Script membaca file dan riwayat Git tim tanpa mengubahnya; test "test menangkap fungsi salah" berjalan di salinan sementara. Perbaiki bagian yang disebut di "Yang perlu diperbaiki", lalu jalankan lagi.
 
 ## Rubrik latihan mandiri (100 poin, tidak dinilai)
 
@@ -80,7 +80,7 @@ Perintahnya sama di macOS, Linux, dan Windows PowerShell. Skrip membaca file dan
 | 6. Log approval Lab | 10 | `cek-lab.mjs` | Minimal 3 baris `Lab` lengkap |
 | 7. Aman | 5 | `cek-lab.mjs` | `.env` tidak dilacak Git, tanpa dependency baru, tanpa pola kredensial |
 | Review diff | 10 | Review tim lain | Checklist terisi untuk fitur Lab, hanya file yang diminta yang berubah, reviewer bisa menjelaskan kodenya dalam 1 menit |
-| Aturan bisnis | 5 | Review tim lain | Aturan cocok dengan tema ALP kelompok dan kasus menguji nilai di batas |
+| Aturan bisnis | 5 | Review tim lain | Aturan cocok dengan tema ALP kelompok dan kasus mengetes nilai di batas |
 | Prompt dan data simulasi | 5 | Review tim lain | `RULES` bisa dicek, semua data di kasus dan test data simulasi |
 | **Total** | **100** | 80 otomatis + 20 manual | |
 

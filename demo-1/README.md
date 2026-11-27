@@ -6,6 +6,8 @@
 
 Kerjakan 1.1-1.6: siapkan repo, jalankan Claude Code, buat `CLAUDE.md`, lalu commit.
 
+**Demo instruktur (±20 menit):** cara kerja coding agent, permission mode, `CLAUDE.md`, git sebagai jaring pengaman, lalu membuka folder lab: dialog trust, status bar, dan satu permission prompt nyata. **Ikuti (±20 menit):** langkah 1.1-1.6 di bawah.
+
 ## 1.1 Siapkan repo
 
 Buka folder `demo-1` di VS Code, lalu buka terminal (**Terminal > New Terminal**). Jadikan titik awal ini commit pertama, supaya setiap perubahan dari agent terlihat di `git diff`.
@@ -99,4 +101,4 @@ Ganti peran untuk Demo 2.
 Kerjakan tanpa agent: tugas reviewer adalah mengecek klaim agent dengan alat sendiri.
 
 1. Dari tabel file dan temuan di 1.3, cek tiga hal sendiri: jumlah test per file (`node --test test/validator.test.js`, lalu `test/report-query.test.js`), daftar fungsi yang di-export tiap file di `src/` (`node --input-type=module -e "import * as m from './src/validator.js'; console.log(Object.keys(m))"`), dan jumlah total test dari `npm test`. Cocokkan dengan klaim agent.
-2. Buktikan bahwa `.env` tidak ikut ke riwayat Git: `git status --short`, `git check-ignore -v .env`, dan `git ls-files` (cari berkas berawalan `.env`). Tulis satu kalimat: aturan mana yang menahannya?
+2. Buktikan bahwa `.env` tidak ikut ke riwayat Git: `git status --short`, `git check-ignore -v .env`, dan `git ls-files` (cari file berawalan `.env`). Tulis satu kalimat: aturan mana yang menahannya?
