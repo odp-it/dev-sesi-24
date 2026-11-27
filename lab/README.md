@@ -6,9 +6,9 @@
 
 Bagian ini **tidak dikerjakan dan tidak dinilai di kelas**. Waktu kelas dipakai untuk presentasi project. Kerjakan setelah kelas (setelah Demo 4 mandiri 4.1–4.2), cek sendiri dengan `node challenge/cek-lab.mjs`. Rubrik di bawah dipakai sebagai daftar cek, bukan nilai.
 
-**Skenario.** Tech lead meminta tiap tim menambah satu aturan bisnis ke aplikasi ALP tim (mis. batas transfer harian di tema perbankan/UMKM, kuota voucher di e-commerce, kapasitas muatan di logistik). Syaratnya: aturan dikerjakan dengan test dulu, boleh dibantu agent, dan jejak keputusannya bisa diperiksa dari riwayat Git dan log approval. Hasil dicek sendiri dengan rubrik di bawah.
+**Skenario.** Tech lead meminta tiap kelompok menambah satu aturan bisnis ke aplikasi ALP kelompok (mis. batas transfer harian di tema perbankan/UMKM, kuota voucher di e-commerce, kapasitas muatan di logistik). Syaratnya: aturan dikerjakan dengan test dulu, boleh dibantu agent, dan jejak keputusannya bisa diperiksa dari riwayat Git dan log approval. Hasil dicek sendiri dengan rubrik di bawah.
 
-Satu laptop per tim, di repo yang sama dengan Demo 1–4. Fitur berbentuk satu fungsi tanpa database dan tanpa dependency, dengan hasil `{ valid, errors: [{ field, code }] }` seperti `validateTransaction`. Semua data simulasi. Tim tanpa akun Claude boleh menulis kode sendiri; baris log approval berisi keputusan reviewer atas setiap perubahan.
+Satu laptop per kelompok, di repo yang sama dengan Demo 1–4. Fitur berbentuk satu fungsi tanpa database dan tanpa dependency, dengan hasil `{ valid, errors: [{ field, code }] }` seperti `validateTransaction`. Semua data simulasi. Kelompok tanpa akun Claude boleh menulis kode sendiri; baris log approval berisi keputusan reviewer atas setiap perubahan.
 
 ## L.1 Tulis spesifikasi dan kasus penerimaan
 
@@ -16,7 +16,7 @@ Isi `challenge/lab.json`:
 
 | Isian | Aturan |
 | --- | --- |
-| `tim`, `fitur`, `fungsi` | Nama tim, nama fitur singkat, nama fungsi (mis. `cekBatasHarian`) |
+| `tim`, `fitur`, `fungsi` | Nama kelompok, nama fitur singkat, nama fungsi (mis. `cekBatasHarian`) |
 | `modul` | `src/alp/<nama>.js` |
 | `test` | `test/alp-<nama>.test.js` |
 | `prompt` | Tetap `prompts/lab-alp.txt` |
@@ -80,7 +80,7 @@ Perintahnya sama di macOS, Linux, dan Windows PowerShell. Skrip membaca file dan
 | 6. Log approval Lab | 10 | `cek-lab.mjs` | Minimal 3 baris `Lab` lengkap |
 | 7. Aman | 5 | `cek-lab.mjs` | `.env` tidak dilacak Git, tanpa dependency baru, tanpa pola kredensial |
 | Review diff | 10 | Review tim lain | Checklist terisi untuk fitur Lab, hanya file yang diminta yang berubah, reviewer bisa menjelaskan kodenya dalam 1 menit |
-| Aturan bisnis | 5 | Review tim lain | Aturan cocok dengan tema ALP tim dan kasus menguji nilai di batas |
+| Aturan bisnis | 5 | Review tim lain | Aturan cocok dengan tema ALP kelompok dan kasus menguji nilai di batas |
 | Prompt dan data simulasi | 5 | Review tim lain | `RULES` bisa dicek, semua data di kasus dan test data simulasi |
 | **Total** | **100** | 80 otomatis + 20 manual | |
 
@@ -88,5 +88,5 @@ Kalau waktu terbatas, dahulukan kriteria 2–5 (55 poin). Skor kurang dari 60: l
 
 ## Bonus Lab (opsional, maks. +10, cek sendiri)
 
-1. (+5) Input tidak terstruktur untuk ALP tim: tulis minimal 5 baris catatan bebas simulasi sesuai tema tim, lalu buat prompt yang mengubahnya menjadi `data/alp-<nama>.json` dengan aturan jangan menebak, `perlu_cek`, dan `alasan_cek` (pola `prompts/b2-ekstrak-catatan.txt`). Tim mencocokkan setiap record dengan tandanya sendiri.
+1. (+5) Input tidak terstruktur untuk ALP kelompok: tulis minimal 5 baris catatan bebas simulasi sesuai tema kelompok, lalu buat prompt yang mengubahnya menjadi `data/alp-<nama>.json` dengan aturan jangan menebak, `perlu_cek`, dan `alasan_cek` (pola `prompts/b2-ekstrak-catatan.txt`). Tim mencocokkan setiap record dengan tandanya sendiri.
 2. (+5) Sebelum commit `feat(alp)` (atau pada perubahan perbaikan sesudahnya), jalankan `prompts/c3-review-keamanan.txt`. Buktikan atau bantah minimal satu temuan di kode, lalu catat di tabel "Temuan keamanan".

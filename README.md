@@ -82,7 +82,7 @@ Data dan kode asli BNI tidak boleh masuk prompt. Seed tambahan yang berasal dari
 - [ ] ERD punya tabel pengguna + role; ERD dan kamus sama dengan tabel di database.
 - [ ] `03-test-invalid.sql` minimal 3 perintah ditolak, kode ORA dicatat di komentar.
 - [ ] Empat view laporan ada; `<awalan>_cek_validasi` 0 baris.
-- [ ] Bagian "Bukti cek" di README terisi (skor `cek-erd.py`, `cek-lab.sql` sesi 22 dan 23).
+- [ ] Bagian "Bukti cek" di README terisi (skor `cek-erd.py`, `cek-lab.sql` sesi 22 dan 23; skrip cek ada di folder `lab` repo `dev-sesi-21`, `dev-sesi-22`, dan `dev-sesi-23`).
 - [ ] Semua bagian `TODO` di README terisi.
 - [ ] Koneksi `ALP_DEV @ FREEPDB1` aktif dan `docker ps` menunjukkan `oracle-alp (healthy)`.
 
