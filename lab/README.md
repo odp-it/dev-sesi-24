@@ -1,10 +1,12 @@
-# Lab · Fitur ALP Tim dengan Test
+# Lab · Latihan Mandiri di Luar Kelas: Fitur ALP Kelompok dengan Test (tidak dinilai)
 
 [Persiapan](../README.md) · [Troubleshooting](../TROUBLESHOOTING.md)
 
 > Hasil Demo 1 sampai Demo 3 sudah terisi di folder ini. Buka folder ini langsung di VS Code dan lakukan persiapan project di sini (`.env`, install, atau `git init`).
 
-**Skenario.** Tech lead meminta tiap tim menambah satu aturan bisnis ke aplikasi ALP tim (mis. batas transfer harian di tema perbankan/UMKM, kuota voucher di e-commerce, kapasitas muatan di logistik). Syaratnya: aturan dikerjakan dengan test dulu, boleh dibantu agent, dan jejak keputusannya bisa diperiksa dari riwayat Git dan log approval. Hasil dinilai dengan rubrik di bawah.
+Bagian ini **tidak dikerjakan dan tidak dinilai di kelas**. Waktu kelas dipakai untuk presentasi project. Kerjakan setelah kelas (setelah Demo 4 mandiri 4.1–4.2), cek sendiri dengan `node challenge/cek-lab.mjs`. Rubrik di bawah dipakai sebagai daftar cek, bukan nilai.
+
+**Skenario.** Tech lead meminta tiap tim menambah satu aturan bisnis ke aplikasi ALP tim (mis. batas transfer harian di tema perbankan/UMKM, kuota voucher di e-commerce, kapasitas muatan di logistik). Syaratnya: aturan dikerjakan dengan test dulu, boleh dibantu agent, dan jejak keputusannya bisa diperiksa dari riwayat Git dan log approval. Hasil dicek sendiri dengan rubrik di bawah.
 
 Satu laptop per tim, di repo yang sama dengan Demo 1–4. Fitur berbentuk satu fungsi tanpa database dan tanpa dependency, dengan hasil `{ valid, errors: [{ field, code }] }` seperti `validateTransaction`. Semua data simulasi. Tim tanpa akun Claude boleh menulis kode sendiri; baris log approval berisi keputusan reviewer atas setiap perubahan.
 
@@ -66,7 +68,7 @@ node challenge/cek-lab.mjs
 
 Perintahnya sama di macOS, Linux, dan Windows PowerShell. Skrip membaca file dan riwayat Git tim tanpa mengubahnya; uji "test menangkap fungsi salah" berjalan di salinan sementara. Perbaiki bagian yang disebut di "Yang perlu diperbaiki", lalu jalankan lagi.
 
-## Rubrik Lab (100 poin)
+## Rubrik latihan mandiri (100 poin, tidak dinilai)
 
 | Kriteria | Poin | Dinilai oleh | Indikator keberhasilan |
 | --- | --- | --- | --- |
@@ -82,9 +84,9 @@ Perintahnya sama di macOS, Linux, dan Windows PowerShell. Skrip membaca file dan
 | Prompt dan data simulasi | 5 | Review tim lain | `RULES` bisa dicek, semua data di kasus dan test data simulasi |
 | **Total** | **100** | 80 otomatis + 20 manual | |
 
-Prioritas: kerjakan dulu kriteria 2–5 (55 poin). Target minimal 60 poin. Cek sendiri dengan `cek-lab.mjs` dan daftar rubrik di atas.
+Kalau waktu terbatas, dahulukan kriteria 2–5 (55 poin). Skor kurang dari 60: lanjutkan sampai memenuhi rubrik. Latihan ini tidak dikumpulkan dan tidak masuk nilai project; cek sendiri dengan `cek-lab.mjs` dan daftar rubrik di atas.
 
-## Bonus Lab (opsional, maks. +10, dinilai manual)
+## Bonus Lab (opsional, maks. +10, cek sendiri)
 
 1. (+5) Input tidak terstruktur untuk ALP tim: tulis minimal 5 baris catatan bebas simulasi sesuai tema tim, lalu buat prompt yang mengubahnya menjadi `data/alp-<nama>.json` dengan aturan jangan menebak, `perlu_cek`, dan `alasan_cek` (pola `prompts/b2-ekstrak-catatan.txt`). Tim mencocokkan setiap record dengan tandanya sendiri.
 2. (+5) Sebelum commit `feat(alp)` (atau pada perubahan perbaikan sesudahnya), jalankan `prompts/c3-review-keamanan.txt`. Buktikan atau bantah minimal satu temuan di kode, lalu catat di tabel "Temuan keamanan".

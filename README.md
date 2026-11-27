@@ -1,6 +1,6 @@
 # 24 - Claude Code & Responsible AI-assisted Coding
 
-Lab ini memakai Claude Code di repo kecil Tabungan UMKM untuk tiga pekerjaan: mengenali code base, membuat data dari input terstruktur dan tidak terstruktur, lalu memperbaiki kode yang tidak aman dengan test. Semua dikerjakan per tim dengan peran bergilir, dan setiap hasil AI dicek dengan alat yang tidak bergantung pada AI: Oracle, skrip cek, dan `npm test`. Hasil akhirnya: `CLAUDE.md` berisi aturan tim, seed tambahan yang lolos constraint, hasil ekstraksi catatan setoran, perbaikan SQL injection dan aturan validasi dengan test lulus, plus log approval.
+Lab ini memakai Claude Code di repo kecil Tabungan UMKM untuk tiga pekerjaan: mengenali code base, membuat data dari input terstruktur dan tidak terstruktur, lalu memperbaiki kode yang tidak aman dengan test. Semua dikerjakan per tim dengan peran bergilir, dan setiap hasil AI dicek dengan alat yang tidak bergantung pada AI: Oracle, skrip cek, dan `npm test`. Hasil akhirnya: `CLAUDE.md` berisi aturan tim, seed tambahan yang lolos constraint, hasil ekstraksi catatan setoran, dan perbaikan SQL injection dengan test lulus, plus log approval. Aturan validasi (Demo 4) diperagakan instruktur dan latihan fitur ALP dengan test dikerjakan mandiri di luar kelas. Di akhir sesi, tiap kelompok mempresentasikan database ALP dari sesi 21–23 (16.00–17.00).
 
 ## Environment & Tools
 
@@ -45,13 +45,69 @@ Data bulk sesi 23 masih ada (`SELECT COUNT(*) FROM transactions;` lebih dari `20
 
 Belum punya tabel sesi 22 di `ALP_DEV`? Jalankan `db/catchup/01-schema.sql` lalu `db/catchup/02-seed.sql` dengan **Run Script (F5)**. Isinya sama dengan file lab sesi 22. Hasil akhir `02-seed.sql`: `3` cabang, `12` nasabah, `15` rekening, `125` transaksi, total saldo `218000000`.
 
+## Claude Code untuk Repo Kelompok
+
+Claude Code adalah asisten, bukan pengganti. Kelompok boleh memakainya untuk melengkapi repo ALP sebelum presentasi dan setelah kelas, dengan aturan sesi 24: manual mode, review diff sebelum menyetujui edit, tanpa data asli, dan commit dilakukan manusia. Tiap Demo punya padanan di repo kelompok.
+
+| Demo sesi 24 | Pemakaian di repo kelompok | File yang disentuh |
+| --- | --- | --- |
+| Demo 1 · `CLAUDE.md` dan aturan tim | Buat `CLAUDE.md` repo kelompok: awalan tabel, data simulasi, larangan `DROP` tanpa izin | `CLAUDE.md` |
+| Demo 2.1 · seed dari schema | Tambah data contoh dari `db/01-ddl.sql` kelompok, lalu cek dengan `db/03-test-invalid.sql` dan `cek-lab.sql` | `db/02-seed.sql` |
+| Demo 3 · review keamanan | Periksa query di `db/05-laporan.sql` dan peta fitur: pakai bind variable, bukan string disambung | `db/05-laporan.sql`, `README.md` |
+| Demo 4 · test dulu | Latihan mandiri (lihat bagian Lab di bawah): aturan bisnis tema kelompok dengan test | `src/alp/`, `test/` |
+
+Langkah umum:
+
+1. Buka repo kelompok di VS Code, jalankan `claude` dari folder repo (status bar harus `manual mode on`). Repo kelompok belum punya `.claude/settings.json`: salin dari folder lab ini, atau tekan Shift+Tab sampai kembali ke manual mode.
+2. Tempel prompt CONTEXT / TASK / RULES / OUTPUT FORMAT. RULES memuat awalan tabel kelompok, data simulasi berpenanda `SIM`, dan file yang boleh berubah.
+3. Baca diff sebelum menyetujui. Jalankan sendiri `00-run-all.sql` dan `cek-lab.sql`; jangan percaya laporan agent.
+4. Commit oleh anggota kelompok, bukan agent.
+
+Data dan kode asli BNI tidak boleh masuk prompt. Seed tambahan yang berasal dari agent harus lolos constraint dan dicek di Oracle sebelum di-commit.
+
+## Presentasi Project Kelompok (16.00–17.00)
+
+7 kelompok × (5 menit presentasi + 3 menit tanya jawab). **Tanpa slide**: README repo kelompok menjadi alur bicara, demo langsung di VS Code dari laptop salah satu anggota. Urutan diumumkan di akhir sesi 23. Kelompok berikutnya menyiapkan laptop selama tanya jawab kelompok sebelumnya.
+
+### Alur 5 menit
+
+1. Masalah, pengguna, fitur MVP (30 detik).
+2. ERD: entity pusat, relasi, tabel pengguna + role, satu aturan data penting dengan alasan bisnis.
+3. Demo langsung: `00-run-all.sql` jalan, satu input salah ditolak (tampilkan kode ORA), view laporan tampil.
+4. Peta fitur → tabel → query: 2–3 endpoint pertama untuk backend.
+
+### Checklist sebelum presentasi
+
+- [ ] `00-run-all.sql` jalan dua kali berturut-turut tanpa error, di laptop yang dipakai presentasi.
+- [ ] ERD punya tabel pengguna + role; ERD dan kamus sama dengan tabel di database.
+- [ ] `03-test-invalid.sql` minimal 3 perintah ditolak, kode ORA dicatat di komentar.
+- [ ] Empat view laporan ada; `<awalan>_cek_validasi` 0 baris.
+- [ ] Bagian "Bukti cek" di README terisi (skor `cek-erd.py`, `cek-lab.sql` sesi 22 dan 23).
+- [ ] Semua bagian `TODO` di README terisi.
+- [ ] Koneksi `ALP_DEV @ FREEPDB1` aktif dan `docker ps` menunjukkan `oracle-alp (healthy)`.
+
+### Rubrik project (100 poin)
+
+Dinilai instruktur saat presentasi. Repo pukul 23.59 hanya untuk serah terima.
+
+| Komponen | Poin | Yang ditunjukkan | Cara menilai |
+| --- | --- | --- | --- |
+| A. ERD + kamus data | 25 | ERD, skor `cek-erd.py` | Skor ÷ 80 × 15; entity sesuai fitur MVP (4); tabel pengguna + role (3); satu aturan data dijelaskan alasannya (3) |
+| B. Database | 35 | `00-run-all.sql` live, skor `cek-lab.sql` 22, satu input salah | Skor ÷ 80 × 25; bangun ulang live tanpa error (5); input salah ditolak dengan kode ORA (3); data contoh masuk akal untuk tema (2) |
+| C. Laporan + kesiapan backend | 15 | View laporan, peta fitur di README | `<awalan>_LAP_RINGKASAN` tampil dengan data (6); peta mencakup tiap fitur MVP (6); 2–3 endpoint pertama (3) |
+| D. Penyampaian | 25 | | Masalah → data runtut (8); alur jelas, selesai 5 menit (7); tanya jawab dijawab dengan data/query (10) |
+
+### Setelah presentasi
+
+Tenggat push final: hari ini pukul 23.59. Kumpulkan link repo kelompok. Repo diserahkan ke pengajar backend (Node.js/Express) sebagai paket: `README.md`, `docs/` (ERD, kamus data, review), dan `db/` (`00-run-all.sql` sampai `07-index.sql`).
+
 ## Studi Kasus
 
 Tim melanjutkan aplikasi contoh **Tabungan UMKM** untuk bank fiktif. Code base ini menyiapkan validasi transaksi dan query laporan yang nanti dipakai REST API di sesi 29–33. Tim operasional juga mengirim dua bahan: kebutuhan data contoh tambahan untuk uji laporan, dan catatan setoran petugas lapangan yang ditulis bebas di chat. Semua data di lab ini data simulasi: rekening `SIM-`, CIF `CIF-SIM-`, email `@example.com`. Data nasabah asli, kredensial, dan kode internal tidak boleh masuk ke prompt.
 
 ## Peran Tim
 
-Satu laptop menjalankan Claude Code (driver). Anggota lain memegang peran berikut dan bergilir tiap Demo dan di Lab:
+Satu laptop menjalankan Claude Code (driver). Anggota lain memegang peran berikut dan bergilir tiap Demo (Demo 4 diperagakan instruktur) dan di latihan mandiri:
 
 | Peran | Tugas |
 | --- | --- |

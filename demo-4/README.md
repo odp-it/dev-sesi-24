@@ -4,7 +4,7 @@
 
 > Hasil Demo 1 sampai Demo 3 sudah terisi di folder ini. Buka folder ini langsung di VS Code dan lakukan persiapan project di sini (`.env`, install, atau `git init`).
 
-Kerjakan 4.1–4.2: tambah aturan validasi dengan test dulu, review diff, lalu commit.
+Di kelas, Demo 4 diperagakan instruktur (±10 menit) karena waktu kelas dipakai untuk presentasi project. Kerjakan 4.1–4.2 secara mandiri setelah kelas: tambah aturan validasi dengan test dulu, review diff, lalu commit. Commit 4.1 dipakai di latihan mandiri folder `lab`.
 
 ## 4.1 Aturan validasi baru, test dulu
 
