@@ -4,11 +4,11 @@
 
 > Hasil Demo 1 sampai Demo 3 sudah terisi di folder ini. Buka folder ini langsung di VS Code dan lakukan persiapan project di sini (`.env`, install, atau `git init`).
 
-Bagian ini **tidak dikerjakan dan tidak dinilai di kelas**. Waktu kelas dipakai untuk presentasi project. Kerjakan setelah kelas (setelah Demo 4 mandiri 4.1–4.2), cek sendiri dengan `node challenge/cek-lab.mjs`. Rubrik di bawah dipakai sebagai daftar cek, bukan nilai.
+Bagian ini **tidak dikerjakan dan tidak dinilai di kelas**. Waktu kelas dipakai untuk presentasi project. Kerjakan setelah kelas (setelah Demo 4 mandiri 4.1-4.2), cek sendiri dengan `node challenge/cek-lab.mjs`. Rubrik di bawah dipakai sebagai daftar cek, bukan nilai.
 
 **Skenario.** Tech lead meminta tiap kelompok menambah satu aturan bisnis ke aplikasi ALP kelompok (mis. batas transfer harian di tema perbankan/UMKM, kuota voucher di e-commerce, kapasitas muatan di logistik). Syaratnya: aturan dikerjakan dengan test dulu, boleh dibantu agent, dan jejak keputusannya bisa diperiksa dari riwayat Git dan log approval. Hasil dicek sendiri dengan rubrik di bawah.
 
-Satu laptop per kelompok, di repo yang sama dengan Demo 1–4. Fitur berbentuk satu fungsi tanpa database dan tanpa dependency, dengan hasil `{ valid, errors: [{ field, code }] }` seperti `validateTransaction`. Semua data simulasi. Kelompok tanpa akun Claude boleh menulis kode sendiri; baris log approval berisi keputusan reviewer atas setiap perubahan.
+Satu laptop per kelompok, di repo yang sama dengan Demo 1-4. Fitur berbentuk satu fungsi tanpa database dan tanpa dependency, dengan hasil `{ valid, errors: [{ field, code }] }` seperti `validateTransaction`. Semua data simulasi. Kelompok tanpa akun Claude boleh menulis kode sendiri; baris log approval berisi keputusan reviewer atas setiap perubahan.
 
 ## L.1 Tulis spesifikasi dan kasus penerimaan
 
@@ -84,7 +84,7 @@ Perintahnya sama di macOS, Linux, dan Windows PowerShell. Skrip membaca file dan
 | Prompt dan data simulasi | 5 | Review tim lain | `RULES` bisa dicek, semua data di kasus dan test data simulasi |
 | **Total** | **100** | 80 otomatis + 20 manual | |
 
-Kalau waktu terbatas, dahulukan kriteria 2–5 (55 poin). Skor kurang dari 60: lanjutkan sampai memenuhi rubrik. Latihan ini tidak dikumpulkan dan tidak masuk nilai project; cek sendiri dengan `cek-lab.mjs` dan daftar rubrik di atas.
+Kalau waktu terbatas, dahulukan kriteria 2-5 (55 poin). Skor kurang dari 60: lanjutkan sampai memenuhi rubrik. Latihan ini tidak dikumpulkan dan tidak masuk nilai project; cek sendiri dengan `cek-lab.mjs` dan daftar rubrik di atas.
 
 ## Bonus Lab (opsional, maks. +10, cek sendiri)
 

@@ -4,7 +4,7 @@
 
 > Hasil Demo 1 sudah terisi di folder ini. Buka folder ini langsung di VS Code dan lakukan persiapan project di sini (`.env`, install, atau `git init`).
 
-Kerjakan 2.1–2.4: prompt untuk input terstruktur dan tidak terstruktur, lalu cek hasilnya di luar AI.
+Kerjakan 2.1-2.4: prompt untuk input terstruktur dan tidak terstruktur, lalu cek hasilnya di luar AI.
 
 ## 2.1 Seed SQL dari schema
 
@@ -29,7 +29,7 @@ transaksi      20
 
 Semua baris rekonsiliasi `COCOK`, dan `TXN_REKENING_TIDAK_AKTIF` = `0`. Setelah `ROLLBACK`, `SELECT COUNT(*) FROM customers WHERE cif_no LIKE 'CIF-SIM-2%';` = `0`.
 
-Kalau ada `ORA-` atau `SELISIH`: jalankan `ROLLBACK;`, salin pesan error (tanpa data lain) ke Claude Code dengan prompt "Perbaiki db/seed-tambahan.sql. Error dari Oracle: [PESAN ERROR]. Jangan ubah file lain.", lalu ulangi langkah 2–4. Catat iterasinya di log approval.
+Kalau ada `ORA-` atau `SELISIH`: jalankan `ROLLBACK;`, salin pesan error (tanpa data lain) ke Claude Code dengan prompt "Perbaiki db/seed-tambahan.sql. Error dari Oracle: [PESAN ERROR]. Jangan ubah file lain.", lalu ulangi langkah 2-4. Catat iterasinya di log approval.
 
 ## 2.2 Catatan setoran bebas ke JSON
 

@@ -1,6 +1,6 @@
 # 24 - Claude Code & Responsible AI-assisted Coding
 
-Lab ini memakai Claude Code di repo kecil Tabungan UMKM untuk tiga pekerjaan: mengenali code base, membuat data dari input terstruktur dan tidak terstruktur, lalu memperbaiki kode yang tidak aman dengan test. Semua dikerjakan per tim dengan peran bergilir, dan setiap hasil AI dicek dengan alat yang tidak bergantung pada AI: Oracle, skrip cek, dan `npm test`. Hasil akhirnya: `CLAUDE.md` berisi aturan tim, seed tambahan yang lolos constraint, hasil ekstraksi catatan setoran, dan perbaikan SQL injection dengan test lulus, plus log approval. Aturan validasi (Demo 4) diperagakan instruktur dan latihan fitur ALP dengan test dikerjakan mandiri di luar kelas. Di akhir sesi, tiap kelompok mempresentasikan database ALP dari sesi 21–23 (16.00–17.00).
+Lab ini memakai Claude Code di repo kecil Tabungan UMKM untuk tiga pekerjaan: mengenali code base, membuat data dari input terstruktur dan tidak terstruktur, lalu memperbaiki kode yang tidak aman dengan test. Semua dikerjakan per tim dengan peran bergilir, dan setiap hasil AI dicek dengan alat yang tidak bergantung pada AI: Oracle, skrip cek, dan `npm test`. Hasil akhirnya: `CLAUDE.md` berisi aturan tim, seed tambahan yang lolos constraint, hasil ekstraksi catatan setoran, dan perbaikan SQL injection dengan test lulus, plus log approval. Aturan validasi (Demo 4) diperagakan instruktur dan latihan fitur ALP dengan test dikerjakan mandiri di luar kelas. Di akhir sesi, tiap kelompok mempresentasikan database ALP dari sesi 21-23 (16.00-17.00).
 
 ## Environment & Tools
 
@@ -41,7 +41,7 @@ Di Windows, Git for Windows disarankan supaya Claude Code bisa memakai Git Bash.
 | Oracle | `docker ps` | `oracle-alp` dengan status `Up ... (healthy)`. Kalau mati: buka Docker Desktop, `docker start oracle-alp`, tunggu `(healthy)` |
 | Data sesi 22 | Di SQL Developer, koneksi `ALP_DEV @ FREEPDB1`: `SELECT COUNT(*) FROM branches;` | `3` |
 
-Data bulk sesi 23 masih ada (`SELECT COUNT(*) FROM transactions;` lebih dari `200000`)? Jalankan `03b-hapus-bulk.sql` dari folder lab sesi 23 dulu. Rekening uji bulk `SIM-2000001`–`SIM-2000500` memakai rentang yang sama dengan 2.1 dan membuat `ORA-00001`.
+Data bulk sesi 23 masih ada (`SELECT COUNT(*) FROM transactions;` lebih dari `200000`)? Jalankan `03b-hapus-bulk.sql` dari folder lab sesi 23 dulu. Rekening uji bulk `SIM-2000001` sampai `SIM-2000500` memakai rentang yang sama dengan 2.1 dan membuat `ORA-00001`.
 
 Belum punya tabel sesi 22 di `ALP_DEV`? Jalankan `db/catchup/01-schema.sql` lalu `db/catchup/02-seed.sql` dengan **Run Script (F5)**. Isinya sama dengan file lab sesi 22. Hasil akhir `02-seed.sql`: `3` cabang, `12` nasabah, `15` rekening, `125` transaksi, total saldo `218000000`.
 
@@ -65,16 +65,40 @@ Langkah umum:
 
 Data dan kode asli BNI tidak boleh masuk prompt. Seed tambahan yang berasal dari agent harus lolos constraint dan dicek di Oracle sebelum di-commit.
 
-## Presentasi Project Kelompok (16.00–17.00)
+## Presentasi Project Kelompok (16.00-17.00)
 
 7 kelompok × (5 menit presentasi + 3 menit tanya jawab). **Tanpa slide**: README repo kelompok menjadi alur bicara, demo langsung di VS Code dari laptop salah satu anggota. Urutan diumumkan di akhir sesi 23. Kelompok berikutnya menyiapkan laptop selama tanya jawab kelompok sebelumnya.
 
+```mermaid
+---
+config:
+  look: classic
+  flowchart:
+    wrappingWidth: 260
+---
+flowchart LR
+  s21["Sesi 21<br/>Tahap 1<br/>ERD + kamus data"]
+  s22["Sesi 22<br/>Tahap 2<br/>tabel + data contoh"]
+  s23["Sesi 23<br/>Tahap 3<br/>laporan + index"]
+  s24["Sesi 24 · sesi ini<br/>16.00<br/>presentasi kelompok"]
+  be["Sesi backend<br/>Node.js/Express"]
+  s21 -->|kamus data| s22
+  s22 -->|tabel + data| s23
+  s23 -->|README + bukti cek| s24
+  s24 -->|repo kelompok| be
+  style s21 fill:#1C4587,color:#fff,stroke:#1C4587
+  style s22 fill:#1C4587,color:#fff,stroke:#1C4587
+  style s23 fill:#1C4587,color:#fff,stroke:#1C4587
+  style s24 fill:#F06634,color:#fff,stroke:#F06634
+  style be fill:#1C4587,color:#fff,stroke:#1C4587
+```
+
 ### Alur 5 menit
 
-1. Masalah, pengguna, fitur MVP (30 detik).
+1. Masalah, ide dan produk BNI yang dikaitkan, fitur MVP (30 detik).
 2. ERD: entity pusat, relasi, tabel pengguna + role, satu aturan data penting dengan alasan bisnis.
 3. Demo langsung: `00-run-all.sql` jalan, satu input salah ditolak (tampilkan kode ORA), view laporan tampil.
-4. Peta fitur → tabel → query: 2–3 endpoint pertama untuk backend.
+4. Peta fitur → tabel → query: 2-3 endpoint pertama untuk backend.
 
 ### Checklist sebelum presentasi
 
@@ -94,8 +118,8 @@ Dinilai instruktur saat presentasi. Repo pukul 23.59 hanya untuk serah terima.
 | --- | --- | --- | --- |
 | A. ERD + kamus data | 25 | ERD, skor `cek-erd.py` | Skor ÷ 80 × 15; entity sesuai fitur MVP (4); tabel pengguna + role (3); satu aturan data dijelaskan alasannya (3) |
 | B. Database | 35 | `00-run-all.sql` live, skor `cek-lab.sql` 22, satu input salah | Skor ÷ 80 × 25; bangun ulang live tanpa error (5); input salah ditolak dengan kode ORA (3); data contoh masuk akal untuk tema (2) |
-| C. Laporan + kesiapan backend | 15 | View laporan, peta fitur di README | `<awalan>_LAP_RINGKASAN` tampil dengan data (6); peta mencakup tiap fitur MVP (6); 2–3 endpoint pertama (3) |
-| D. Penyampaian | 25 | | Masalah → data runtut (8); alur jelas, selesai 5 menit (7); tanya jawab dijawab dengan data/query (10) |
+| C. Laporan + kesiapan backend | 15 | View laporan, peta fitur di README | `<awalan>_LAP_RINGKASAN` tampil dengan data (6); peta mencakup tiap fitur MVP (6); 2-3 endpoint pertama (3) |
+| D. Penyampaian | 25 | | Masalah, ide dan produk BNI → data runtut (8); alur jelas, selesai 5 menit (7); tanya jawab dijawab dengan data/query (10) |
 
 ### Setelah presentasi
 
@@ -103,7 +127,7 @@ Tenggat push final: hari ini pukul 23.59. Kumpulkan link repo kelompok. Repo dis
 
 ## Studi Kasus
 
-Tim melanjutkan aplikasi contoh **Tabungan UMKM** untuk bank fiktif. Code base ini menyiapkan validasi transaksi dan query laporan yang nanti dipakai REST API di sesi 29–33. Tim operasional juga mengirim dua bahan: kebutuhan data contoh tambahan untuk uji laporan, dan catatan setoran petugas lapangan yang ditulis bebas di chat. Semua data di lab ini data simulasi: rekening `SIM-`, CIF `CIF-SIM-`, email `@example.com`. Data nasabah asli, kredensial, dan kode internal tidak boleh masuk ke prompt.
+Tim melanjutkan aplikasi contoh **Tabungan UMKM** untuk bank fiktif. Code base ini menyiapkan validasi transaksi dan query laporan yang nanti dipakai REST API di sesi 29-33. Tim operasional juga mengirim dua bahan: kebutuhan data contoh tambahan untuk uji laporan, dan catatan setoran petugas lapangan yang ditulis bebas di chat. Semua data di lab ini data simulasi: rekening `SIM-`, CIF `CIF-SIM-`, email `@example.com`. Data nasabah asli, kredensial, dan kode internal tidak boleh masuk ke prompt.
 
 ## Peran Tim
 
@@ -132,4 +156,4 @@ Aturan izin selama lab:
 
 Data seed tambahan sudah dibatalkan dengan `ROLLBACK` di 2.1. Container `oracle-alp` tetap dipakai di sesi berikutnya: setelah selesai cukup `docker stop oracle-alp`. Hapus `.env` latihan kalau repo ini akan dibagikan.
 
-Pola yang sama (aturan di `CLAUDE.md`, prompt berstruktur, cek di luar AI, review sebelum commit) dipakai terus di sesi 25–56 saat membangun REST API dan aplikasi ALP. Sesi 25 mulai dari Node.js runtime, modul, dan event.
+Pola yang sama (aturan di `CLAUDE.md`, prompt berstruktur, cek di luar AI, review sebelum commit) dipakai terus di sesi 25-56 saat membangun REST API dan aplikasi ALP. Sesi 25 mulai dari Node.js runtime, modul, dan event.

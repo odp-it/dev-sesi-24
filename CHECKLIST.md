@@ -11,13 +11,13 @@ Di kelas:
 - [ ] `db/cek-seed-tambahan.sql`: 5 / 6 / 20, semua `COCOK`, `0` transaksi di rekening tidak aktif, lalu `ROLLBACK`
 - [ ] `node scripts/cek-setoran.js` berakhir dengan `OK  bentuk data sesuai aturan`, dan setiap beda dengan tanda tim sudah diputuskan
 - [ ] 3.1: `npm test` lulus, test lebih banyak dari 10, dan input berbahaya hanya ada di `binds`
-- [ ] `review/log-approval.md` terisi minimal 4 baris dari Demo 1–3
+- [ ] `review/log-approval.md` terisi minimal 4 baris dari Demo 1-3
 - [ ] Presentasi project kelompok selesai dalam 5 menit, checklist sebelum presentasi terpenuhi
 - [ ] Repo kelompok di-push dan link dikumpulkan sebelum 23.59
 
 Latihan mandiri di luar kelas (tidak dinilai):
 
-- [ ] Demo 4 (4.1–4.2): `git log --oneline` berisi commit awal + Demo 1, 2, 3 (3.1), dan 4 (4.1); `npm test` lulus
+- [ ] Demo 4 (4.1-4.2): `git log --oneline` berisi commit awal + Demo 1, 2, 3 (3.1), dan 4 (4.1); `npm test` lulus
 - [ ] Lab mandiri: `node challenge/cek-lab.mjs` menampilkan skor otomatis (target minimal 48 dari 80, setara 60%)
 
 ## Verifikasi & Expected Result

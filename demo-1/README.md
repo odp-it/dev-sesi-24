@@ -4,7 +4,7 @@
 
 > Buka folder ini langsung di VS Code dan lakukan persiapan project di sini (`.env`, install, atau `git init`).
 
-Kerjakan 1.1–1.6: siapkan repo, jalankan Claude Code, buat `CLAUDE.md`, lalu commit.
+Kerjakan 1.1-1.6: siapkan repo, jalankan Claude Code, buat `CLAUDE.md`, lalu commit.
 
 ## 1.1 Siapkan repo
 

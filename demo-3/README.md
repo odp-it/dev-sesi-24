@@ -4,7 +4,7 @@
 
 > Hasil Demo 1 sampai Demo 2 sudah terisi di folder ini. Buka folder ini langsung di VS Code dan lakukan persiapan project di sini (`.env`, install, atau `git init`).
 
-Kerjakan 3.1–3.2: perbaiki query dengan plan mode, lalu review keamanan.
+Kerjakan 3.1-3.2: perbaiki query dengan plan mode, lalu review keamanan.
 
 ## 3.1 Bind variable di `report-query.js`, dengan plan mode
 
